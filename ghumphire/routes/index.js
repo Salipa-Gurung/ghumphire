@@ -69,7 +69,7 @@ router.get('/explore', function(req, res, next) {
 
 router.get('/approve-blog/:id', async function(req, res, next) {
   await Blogs.updateOne({ _id: req.params.id }, { $set: { approved: true }});
-  res.redirect(`/review/${ req.params.id } `);
+  res.redirect(`/review/${ req.params.id }`);
 });
 
 
