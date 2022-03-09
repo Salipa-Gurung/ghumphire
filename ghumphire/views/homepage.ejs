@@ -107,7 +107,7 @@
             <ul id="nav" class="nav navbar-nav navigation-menu">
                 <li><a data-scroll href="#body">Home</a></li>
                 <li><a data-scroll href="#about">About Us</a></li>
-                <li><a data-scroll href="#blog">Blog</a></li>
+                <li><a data-scroll href="#blog">Blogs</a></li>
                 <li><a data-scroll href="#contact-us">Contact</a></li>
             </ul>
         </nav>
@@ -122,8 +122,8 @@
 <!--
 		Start About Section
 		==================================== -->
-		<section class="bg-one about section">
-			<div class="container">
+		<section class="bg-one about section" id="about">
+			<div class="container" >
 				<div class="row">
 				
 					<!-- section title -->
@@ -268,8 +268,8 @@ Start Counter Section
 							</div>
 							
 							<div class="content">
-								<h3><a href=""><%= blog.title %></a></h3>
-								<p><%= blog.content %></p>
+								<h3><a href=""><%= blog.title ? blog.title : 'Title Here' %></a></h3>
+								<p><%= blog.content ? blog.content : 'description here' %></p>
 								<a class="btn btn-transparent" href="/readmore/<%= blog._id %>">Read more</a>
 							</div>
 						</div>						
@@ -278,7 +278,7 @@ Start Counter Section
 				<% }) %>
 			</div>
 			<div class="all-post text-center">
-				<a class="btn btn-main" href="blog.html">View All Post</a>
+				<a class="btn btn-main" href="/explore">View All Post</a>
 			</div>
 		</div> <!-- end row -->
 	</div> <!-- end container -->
