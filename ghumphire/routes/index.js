@@ -8,7 +8,7 @@ const Blogs = require('../models/blog.model')
 
 /* GET home page. */
 router.get('/',async function(req, res, next) {
-const blogs = await Blogs.find({}, {}, { limit: 3 });
+const blogs = await Blogs.find({ approved: true }, {}, { limit: 3 });
 res.render('homepage', {blogList : blogs});
 });
 
@@ -42,12 +42,20 @@ router.get('/home', function(req, res, next) {
 });
 
 router.get('/reviewer', function(req, res, next) {
-
+  Blogs.find({ approved: { $ne: true } }).exec(function(err, blogs){
+    res.render('explore', { blogList: blogs });
+  })
 });
 
 router.get('/author', function(req, res, next) {
 
 });
+
+router.get('/explore', function(req, res, next) {
+  Blogs.find({ approved: true }).exec(function(err, blogs){
+    res.render('explore', { blogList: blogs });
+  })
+})
 
 
 module.exports = router;
