@@ -8,8 +8,8 @@ const Blogs = require('../models/blog.model')
 
 /* GET home page. */
 router.get('/',async function(req, res, next) {
-const blogs = await Blogs.find({ approved: true }, {}, { limit: 3 });
-res.render('homepage', {blogList : blogs});
+  const blogs = await Blogs.find({ approved: true }, {}, { limit: 3 });
+  res.render('homepage', {blogList : blogs});
 });
 
 router.get('/addPost', function(req, res, next) {
@@ -51,6 +51,11 @@ router.get('/author', function(req, res, next) {
 
 });
 
+router.get('/readmore/:id', async function(req, res, next){
+  const blog = await Blogs.findOne({ _id:req.params.id });
+  res.render('blog-single', { blog : blog });
+});
+   
 router.get('/explore', function(req, res, next) {
   Blogs.find({ approved: true }).exec(function(err, blogs){
     res.render('explore', { blogList: blogs });
