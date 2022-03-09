@@ -46,8 +46,8 @@ router.post('/requestUpload', async function(req, res, next){
   const blogContent = new Blogs({
     authorName,
     authorEmail,
-    title,
-    content,
+    title: title ? title : 'Title here',
+    content : content ? content : 'Description here' ,
     location,
     tag,
     priceRange,
@@ -66,7 +66,7 @@ router.get('/home', function(req, res, next) {
 
 router.get('/reviewer', function(req, res, next) {
   Blogs.find({ approved: { $ne: true } }).exec(function(err, blogs){
-    res.render('explore', { blogList: blogs });
+    res.render('reviewer', { blogList: blogs });
   })
 });
 
@@ -76,14 +76,24 @@ router.get('/author', function(req, res, next) {
 
 router.get('/readmore/:id', async function(req, res, next){
   const blog = await Blogs.findOne({ _id:req.params.id });
-  res.render('blog-single', { blog : blog });
+  res.render('blog-single', { blog : blog, isReviewer: false });
+});
+
+router.get('/review/:id', async function(req, res, next){
+  const blog = await Blogs.findOne({ _id: req.params.id });
+  res.render('blog-single', { blog : blog, isReviewer: true });
 });
    
 router.get('/explore', function(req, res, next) {
   Blogs.find({ approved: true }).exec(function(err, blogs){
     res.render('explore', { blogList: blogs });
   })
-})
+});
+
+router.get('/approve-blog/:id', async function(req, res, next) {
+  await Blogs.updateOne({ _id: req.params.id }, { $set: { approved: true }});
+  res.redirect(`/review/${ req.params.id }`);
+});
 
 
 module.exports = router;
