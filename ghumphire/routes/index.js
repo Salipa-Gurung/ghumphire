@@ -8,7 +8,7 @@ const Blogs = require('../models/blog.model')
 
 /* GET home page. */
 router.get('/',async function(req, res, next) {
-  const blogs = await Blogs.find({ }, {}, { limit: 9 });
+  const blogs = await Blogs.find({ approved: true }, {}, { limit: 3 });
   res.render('homepage', {blogList : blogs});
 });
 
