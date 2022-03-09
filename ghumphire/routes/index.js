@@ -8,13 +8,36 @@ const Blogs = require('../models/blog.model')
 
 /* GET home page. */
 router.get('/',async function(req, res, next) {
-  const blogs = await Blogs.find({ approved: true }, {}, { limit: 3 });
+  const blogs = await Blogs.find({ }, {}, { limit: 9 });
   res.render('homepage', {blogList : blogs});
 });
 
 router.get('/addPost', function(req, res, next) {
   res.render('authorForm');
 });
+
+router.get('/sendLikes', async function(req, res, next) {
+  // console.log(req.query.blogId);
+  // console.log(req.query.userId);
+  await Blogs.updateOne({ _id:req.query.blogId }, { 
+    $push: { likes: req.query.userId }
+  });
+
+
+  res.redirect(`/readmore/${ req.query.blogId }`)
+});
+router.get('/sendDislikes', async function(req, res, next) {
+  // console.log(req.query.blogId);
+  // console.log(req.query.userId);
+  await Blogs.updateOne({ _id:req.query.blogId }, { 
+    $push: { dislikes: req.query.userId }
+  });
+
+
+  res.redirect(`/readmore/${ req.query.blogId }`)
+});
+
+
 
 router.post('/requestUpload', async function(req, res, next){
   console.log('requesting to be approved');

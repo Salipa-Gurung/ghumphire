@@ -131,6 +131,16 @@ End Fixed Navigation
 
                     <div class="content">
                     <h3><a href=""><%= blog.title ? blog.title : 'Title Here' %></a></h3>
+					<div style="margin-top: 10px; margin-bottom: 15px;">
+						<span style="color: white; margin-right: 5px;">
+							<i class="tf-ion-thumbsup" style="font-size: 20px;"></i>
+							<span><%= blog.likes.length %> Likes</span>
+						</span>
+						<span style="color: white; margin-left: 5px;">
+							<i class="tf-ion-thumbsdown" style="font-size: 20px;"></i>
+							<span"><%= blog.dislikes.length %> Dislikes</span>
+						</span>
+					</div>
                     <p><%= blog.content ? blog.content : 'description here' %></p>
                     <a class="btn btn-transparent" href="/readmore/<%= blog._id %>">Read more</a>
                     </div>
