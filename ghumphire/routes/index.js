@@ -39,4 +39,17 @@ router.post('/requestUpload', function(){
   })
 });
 
+router.get('/home', function(req, res, next) {
+  res.render('homepage')
+});
+
+router.get('/reviewer', function(req, res, next) {
+
+});
+
+router.get('/author', function(req, res, next) {
+
+});
+
+
 module.exports = router;
