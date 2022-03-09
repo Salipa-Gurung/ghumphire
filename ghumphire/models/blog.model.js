@@ -7,11 +7,15 @@ const BlogScheme = mongoose.Schema({
     content : String,
     location : String,
     tag : [String],
-    priceRange : Number,
+    priceRange : String,
     like : [Number],
     dislike : [Number],
     comment : [String],
     approved : {
+        type : Boolean,
+        default : false,
+    },
+    friendly: {
         type : Boolean,
         default : false,
     },
