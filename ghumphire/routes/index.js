@@ -8,7 +8,8 @@ const Blogs = require('../models/blog.model')
 
 /* GET home page. */
 router.get('/',async function(req, res, next) {
-const blogs = await Blogs.find({}, {}, { limit: 3 });
+const blogs = await Blogs.find({}, {}, { limit: 9 });
+console.log(blogs);
 res.render('homepage', {blogList : blogs});
 });
 
@@ -48,6 +49,13 @@ router.get('/reviewer', function(req, res, next) {
 router.get('/author', function(req, res, next) {
 
 });
+
+router.get('/readmore/:id', async function(req, res, next){
+  const blog = await Blogs.findOne({ _id:req.params.id });
+  res.render('blog-single', { blog : blog });
+});
+   
+
 
 
 module.exports = router;
