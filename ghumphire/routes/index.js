@@ -49,5 +49,11 @@ router.get('/author', function(req, res, next) {
 
 });
 
+router.get('/explore', function(req, res, next) {
+  Blogs.find().exec(function(err, blogs){
+    res.render('explore', {blogList: blogs});
+  })
+})
+
 
 module.exports = router;
