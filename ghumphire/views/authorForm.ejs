@@ -25,23 +25,23 @@
             <form id="contact-form" method="post" action="requestUpload" role="form">
             
                 <div class="form-group">
-                    <input type="text" placeholder="Author Name" class="form-control" name="authorName" id="authorName">
+                    <input type="text" placeholder="Author Name" class="form-control" name="authorName" id="authorName" required>
                 </div>
                 
                 <div class="form-group">
-                    <input type="email" placeholder="Author Email" class="form-control" name="email" id="email">
+                    <input type="email" placeholder="Author Email" class="form-control" name="email" id="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Title" class="form-control" name="title" id="title">
+                    <input type="text" placeholder="Title" class="form-control" name="title" id="title" required>
                 </div>
                 
                 <div class="form-group">
-                    <textarea rows="6" placeholder="Content" class="form-control" name="content" id="content"></textarea>	
+                    <textarea rows="6" placeholder="Content" class="form-control" name="content" id="content" required></textarea>	
                 </div>
 
                 <div class="form-group">
-                    <input rows="6" placeholder="Location" class="form-control" name="location" id="location"></input>	
+                    <input rows="6" placeholder="Location" class="form-control" name="location" id="location" required></input>	
                 </div>
 
                 <div class="form-group">
@@ -56,9 +56,6 @@
                     Thank you :)
                 </div>
                 <!--                 
-                <div id="mail-fail" class="error">
-                    Sorry, don't know what happened. Try later :(
-                </div> -->
                 
                 <div id="cf-submit">
                     <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
