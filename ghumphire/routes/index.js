@@ -1,24 +1,26 @@
+const { log } = require('debug/src/node');
 var express = require('express');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 var router = express.Router();
 
-const blogModel = require('../models/blog.model')
+const Blogs = require('../models/blog.model')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/',async function(req, res, next) {
+const blogs = await Blogs.find({}, {}, { limit: 3 });
+res.render('homepage', {blogList : blogs});
 });
 
 router.get('/addPost', function(req, res, next) {
   res.render('authorForm');
 });
 
-router.post('/requestUpload', function(){
+router.post('/requestUpload', async function(req, res, next){
   console.log('requesting to be approved');
-  const { authorName, authorEmail, title, content, location, tag, priceRange, like, dislike, comment, approved } = req.body;
+  const { authorName, authorEmail, title, content, location, tag, priceRange } = req.body;
 
-  const blogContent = new blogModel({
+  const blogContent = new Blogs({
     authorName,
     authorEmail,
     title,
@@ -26,17 +28,13 @@ router.post('/requestUpload', function(){
     location,
     tag,
     priceRange,
-    like,
-    dislike,
-    comment,
-    approved,
   });
 
-  const promise = blogModel.save();
-  promise.then((blogModel) => {
-    console.log('Blog save');
-    res.redirect('/home');
-  })
+  // console.log(blo)
+
+  const blog = await blogContent.save();
+  console.log(blog);
+  res.redirect('/');
 });
 
 router.get('/home', function(req, res, next) {

@@ -5,35 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Fontawesome Icon font -->
+	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="plugins/animate-css/animate.css">
+	<!-- Magnific popup css -->
+	<link rel="stylesheet" href="plugins/magnific-popup/dist/magnific-popup.css">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Contact Form -->
         <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-            <form id="contact-form" method="post" action="sendmail.php" role="form">
+            <form id="contact-form" method="post" action="requestUpload" role="form">
             
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                    <input type="text" placeholder="Author Name" class="form-control" name="name" id="name">
                 </div>
                 
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                    <input type="email" placeholder="Author Email" class="form-control" name="email" id="email">
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+                    <input type="text" placeholder="Title" class="form-control" name="title" id="title">
                 </div>
                 
                 <div class="form-group">
-                    <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	
+                    <textarea rows="6" placeholder="Content" class="form-control" name="content" id="content"></textarea>	
                 </div>
-                
+
+                <div class="form-group">
+                    <input rows="6" placeholder="Location" class="form-control" name="location" id="location"></input>	
+                </div>
+
+                <div class="form-group">
+                    <input rows="6" placeholder="Tag" class="form-control" name="tag" id="tag"></input>	
+                </div>
+
+                <div class="form-group">
+                    <input rows="6" placeholder="PriceRange" class="form-control" name="priceRange" id="priceRange"></input>	
+                </div>
+
                 <div id="mail-success" class="success">
-                    Thank you. The Mailman is on His Way :)
+                    Thank you :)
                 </div>
-                
+                <!--                 
                 <div id="mail-fail" class="error">
                     Sorry, don't know what happened. Try later :(
-                </div>
+                </div> -->
                 
                 <div id="cf-submit">
                     <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
