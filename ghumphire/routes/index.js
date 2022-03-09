@@ -43,7 +43,7 @@ router.get('/home', function(req, res, next) {
 
 router.get('/reviewer', function(req, res, next) {
   Blogs.find({ approved: { $ne: true } }).exec(function(err, blogs){
-    res.render('explore', { blogList: blogs });
+    res.render('reviewer', { blogList: blogs });
   })
 });
 
