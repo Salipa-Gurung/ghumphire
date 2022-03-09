@@ -33,6 +33,52 @@
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="../../css/style.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function thumbsupfun(){
+            // console.log("hello hello", window.location.href);
+            swal("Mention your email address to submit like", {
+                content: "input",
+                allowOutsideClick: false
+            })
+            .then((value) => {
+                const hrefs = window.location.href.split('/');
+                const blogId = hrefs[ hrefs.length - 1 ];
+                if (value) {
+                    swal(`Submitting like from ${value}`);
+                    window.location.href = `/sendLikes?blogId=${ blogId }&userId=${ value }`;
+                } else {
+                    swal(`Email not provided.`);
+                }
+            })
+            .catch((e) => {
+                swal(`You cancelled.`);
+            });
+        }
+
+        function thumbsdownfun(){
+            console.log("hello hello", window.location.href);
+            swal("Mention your email address to submit dislike", {
+                content: "input",
+                allowOutsideClick : false
+            })
+            .then((value) => {
+                const hrefs = window.location.href.split('/');
+                const blogId = hrefs[ hrefs.length - 1 ];
+                if (value){
+                swal(`Submitting dislike from ${value}`);
+                window.location.href = `/sendDislikes?blogId=${ blogId }&userId=${ value } ` ;
+            } else {
+                swal(`Email not provided.`);
+             }
+            })
+            .catch((e) => {
+                swal(`You cancelled`);
+            });
+        }
+    </script>
+
 
 </head>
 
@@ -92,14 +138,10 @@
       <!-- main nav -->
       <nav class="collapse navbar-collapse navbar-right" role="Navigation">
         <ul id="nav" class="nav navbar-nav navigation-menu">
-          <li><a data-scroll href="index.html#body">Home</a></li>
-          <li><a data-scroll href="index.html#about">About Us</a></li>
-          <li><a data-scroll href="index.html#services">Services</a></li>
-          <li><a data-scroll href="index.html#portfolio">Portfolio</a></li>
-          <li><a data-scroll href="index.html#our-team">Team</a></li>
-          <li><a data-scroll href="index.html#pricing">Pricing</a></li>
-          <li><a data-scroll href="index.html#blog">Blog</a></li>
-          <li><a data-scroll href="index.html#contact-us">Contact</a></li>
+          <li><a data-scroll href="/#body">Home</a></li>
+          <li><a data-scroll href="/#about">About Us</a></li>
+          <li><a data-scroll href="/#blog">Blog</a></li>
+          <li><a data-scroll href="/#contact-us">Contact</a></li>
         </ul>
       </nav>
       <!-- /main nav -->
@@ -114,12 +156,22 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1> <%= blog.title %> </h1>
-                <ul class="list-inline mb-50">
+                <ul class="list-inline">
                     <li class="list-inline-item"> <%= blog.authorName %></li>
                     <li class="list-inline-item">August 8, 2017</li>
                 </ul>
+                <div style="margin-top: 10px; margin-bottom: 15px;">
+                    <span style="color: white; margin-right: 5px;">
+                        <i class="tf-ion-thumbsup" style="font-size: 20px;"></i>
+                        <span><%= blog.likes.length %> Likes</span>
+                    </span>
+                    <span style="color: white; margin-left: 5px;">
+                        <i class="tf-ion-thumbsdown" style="font-size: 20px;"></i>
+                        <span"><%= blog.dislikes.length %> Dislikes</span>
+                    </span>
+                </div>
                 <div class="text-center">
-                <img class="img-fluid mb-50" src="../../images/blog/blog-single.jpg" alt="blog-image">
+                <img class="img-fluid mb-50" src="../../images/blog/pic_2.jpg" alt="blog-image">
                 
                 </div>
             <div class="col-lg-12">
@@ -140,11 +192,8 @@
 				<!-- Footer Social Links -->
 				<div class="social-icon">
 					<ul class="list-inline">
-						<li><a href="https://facebook.com/themefisher"><i class="tf-ion-social-facebook"></i></a></li>
-						<li><a href="https://twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a></li>
-						<li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA"><i class="tf-ion-social-youtube"></i></a></li>
-						<li><a href="https://dribbble.com/themefisher"><i class="tf-ion-social-dribbble-outline"></i></a></li>
-						<li><a href="https://pinterest.com/themefisher"><i class="tf-ion-social-pinterest-outline"></i></a></li>
+						<li><a onclick="thumbsupfun()"><i class="tf-ion-thumbsup"></i></a></li>
+						<li><a onclick="thumbsdownfun()"><i class="tf-ion-thumbsdown"></i></a></li>
 					</ul>
 				</div>
 				<!--/. End Footer Social Links -->

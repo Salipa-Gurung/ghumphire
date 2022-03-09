@@ -59,11 +59,11 @@
 	</div>
 
 
-<section class="hero-area overlay" style="background-image: url('images/banner/hero-area.jpg');">
+<section class="hero-area overlay" style="background-image: url('images/banner/pic_2.jpg');">
 
 	<div class="block">
 
-		<h1>GHUMPHIRE</h1>
+		<h1>GHUMPHIREY</h1>
 		<h2>Experience the new reality</h2>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Fugit, excepturi. At recusandae sit perferendis autem,iste tempora nostrum numquam sapiente!</p>
 		<a data-scroll href="#blog" class="btn btn-transparent">Explore Us</a>
@@ -268,7 +268,17 @@ Start Counter Section
 							</div>
 							
 							<div class="content">
-								<h3><a href=""><%= blog.title ? blog.title : 'Title Here' %></a></h3>
+								<h3><a href="/readmore/<%= blog._id %>"><%= blog.title ? blog.title : 'Title Here' %></a></h3>
+								<div style="margin-top: 10px; margin-bottom: 15px;">
+									<span style="color: white; margin-right: 5px;">
+										<i class="tf-ion-thumbsup" style="font-size: 20px;"></i>
+										<span><%= blog.likes.length %> Likes</span>
+									</span>
+									<span style="color: white; margin-left: 5px;">
+										<i class="tf-ion-thumbsdown" style="font-size: 20px;"></i>
+										<span"><%= blog.dislikes.length %> Dislikes</span>
+									</span>
+								</div>
 								<p><%= blog.content ? blog.content : 'description here' %></p>
 								<a class="btn btn-transparent" href="/readmore/<%= blog._id %>">Read more</a>
 							</div>
@@ -304,12 +314,12 @@ Start Counter Section
 				<div class="contact-details">
 					<div class="con-info clearfix">
 						<i class="tf-map-pin"></i>
-						<span>Khaja Road, Bayzid, Chittagong, Bangladesh</span>
+						<span>Street No : 12, Lakeside, Pokhara, Nepal</span>
 					</div>
 					
 					<div class="con-info clearfix">
 						<i class="tf-ion-ios-telephone-outline"></i>
-						<span>Phone: +880-31-000-000</span>
+						<span>Phone: +977 9876543213</span>
 					</div>
 					
 					<div class="con-info clearfix">
@@ -319,7 +329,7 @@ Start Counter Section
 					
 					<div class="con-info clearfix">
 						<i class="tf-ion-ios-email-outline"></i>
-						<span>Email: hello@meghna.com</span>
+						<span>Email: Ghumfirey@gmail.com</span>
 					</div>
 				</div>
 			</div>

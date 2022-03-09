@@ -9,9 +9,9 @@ const BlogScheme = mongoose.Schema({
     location : String,
     tag : [String],
     priceRange : String,
-    like : [Number],
-    dislike : [Number],
-    comment : [String],
+    likes : [ String ],
+    dislikes : [ String ],
+    comments : [ String ],
     approved : {
         type : Boolean,
         default : false,
