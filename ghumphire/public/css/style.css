@@ -10,14 +10,21 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 @import url("https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,600");
 html {
-  background-color: #353b43;
-  color: #737f8a;
+  /* background-color: #353b43;
+  color: #737f8a; */
+  background-color: #F1D1C7;
+  color: #F6F2EC;
 }
 
 body {
-  background-color: #353b43;
+  /* background-color: #353b43;
   font-family: "Anaheim", sans-serif;
   color: #737f8a;
+  -webkit-font-smoothing: antialiased; */
+
+background-color: #F6F2EC;
+  font-family: "Anaheim", sans-serif;
+  color: #F1D1C7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,8 +36,10 @@ h5,
 h6 {
   font-weight: 400;
   font-family: "Quattrocento Sans", sans-serif;
-  color: #afbac4;
+   /* color: #afbac4; */
+   color: #E7AF60;
 }
+
 
 p {
   font-family: "Quattrocento Sans", sans-serif;
@@ -42,7 +51,8 @@ p {
 ::-moz-selection {
   /* Code for Firefox */
   color: #fff;
-  background: #57cbcc;
+  /* background: #57cbcc; */
+  background : #C89E8A;
 }
 
 ::selection {
@@ -107,7 +117,8 @@ a:hover {
 }
 
 .btn-transparent:hover, .btn-transparent:focus {
-  background-color: #57cbcc;
+  /* background-color: #57cbcc; */
+   background-color: #C89E8A;
   border: 1px solid transparent;
   color: #fff;
 }
@@ -126,7 +137,7 @@ a:hover {
 
 .form-control::-webkit-input-placeholder {
   /*  Chrome, Safari, Opera  */
-  color: #ddd;
+  color: orangered;
 }
 
 .form-control:-moz-placeholder {
@@ -165,7 +176,8 @@ a:hover {
 }
 
 .color {
-  color: #6CB670;
+  /* color: #6CB670; */
+  color: #A5593C;
 }
 
 .sub-title {
@@ -187,11 +199,12 @@ a:hover {
 }
 
 .bg-one {
-  background-color: #353b43;
+  background-color: #F6F2EC;
 }
 
 .bg-dark {
   background: #242930;
+  /* background: rebeccapurple; */
 }
 
 .parallax-section {
@@ -326,7 +339,8 @@ a:hover {
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: #57cbcc;
+  /* background-color: #57cbcc; */
+  background-color: #C89E8A;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
@@ -431,7 +445,8 @@ a:hover {
 }
 
 .section-bg {
-  background: #292F36;
+  /* background: #292F36; */
+  background: #F6F2EC;
 }
 
 .overly {
@@ -555,7 +570,8 @@ a:hover {
   Navigation
 ==================================================================*/
 .navigation {
-  background-color: #1d2024;
+  /* background-color: #1d2024; */
+  background-color: #F6F2EC;
   width: 100%;
   z-index: 99;
   margin-bottom: 0;
@@ -574,17 +590,19 @@ a:hover {
 }
 
 .navigation .navigation-menu li.active a {
-  color: #57cbcc;
+  /* color: #5E3023; */
+  color: black;
 }
 
 .navigation .navigation-menu li a {
   font-size: 16px;
-  color: #737f8a;
+  color:#D2462D;
 }
 
 .navigation .navigation-menu li a:hover, .navigation .navigation-menu li a:focus {
   background: transparent;
-  color: #57cbcc;
+  /* color: #57cbcc; */
+  color: #E7AF60;
 }
 
 .navbar-toggle {
@@ -704,7 +722,9 @@ a:hover {
   About us section
 ==================================================================*/
 .about .block {
-  background: #242930;
+  /* background:  #242930; */
+  /* background: white; */
+  background: #F6F2EC;
   padding: 30px;
   border-bottom: 2px solid transparent;
   transition: .5s all;
@@ -712,7 +732,7 @@ a:hover {
 }
 
 .about .block:hover {
-  border-bottom: 2px solid #57cbcc;
+  border-bottom: 2px solid #D2462D;
 }
 
 .about .block:hover .icon-box {
@@ -844,7 +864,7 @@ a:hover {
 
 .contact-form .form-control {
   background-color: transparent;
-  border: 1px solid rgba(236, 239, 241, 0.07);
+  border: 1px solid maroon;
   height: 45px;
 }
 
@@ -860,8 +880,8 @@ a:hover {
 }
 
 #contact-submit {
-  border: 1px solid rgba(236, 239, 241, 0.07);
-  background: #57cbcc;
+  border: 1px solid rgba(26, 28, 29, 0.07);
+  background: maroon;
   padding: 12px 0;
   width: 100%;
   margin: 0;
