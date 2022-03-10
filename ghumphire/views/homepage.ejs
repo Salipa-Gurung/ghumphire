@@ -280,7 +280,7 @@ Start Counter Section
 										<span"><%= blog.dislikes.length %> Dislikes</span>
 									</span>
 								</div>
-								<p><%= blog.content ? blog.content : 'description here' %></p>
+								<p><%= blog.content ? blog.content.substring(0, 200) : 'description here' %></p>
 								<a class="btn btn-transparent" href="/readmore/<%= blog._id %>">Read more</a>
 							</div>
 						</div>						

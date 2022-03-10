@@ -95,5 +95,12 @@ router.get('/approve-blog/:id', async function(req, res, next) {
   res.redirect(`/review/${ req.params.id }`);
 });
 
+router.post('/search', async function(req, res, next){
+  console.log("-----------", req.body);
+  const blogs  = await Blogs.find({ approved: true, title: req.body.searchText });
+  console.log(req.body.searchText);
+  res.render('explore', { blogList: blogs });
+})
+
 
 module.exports = router;

@@ -37,7 +37,6 @@
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 
-
 </head>
 
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -111,6 +110,10 @@ End Fixed Navigation
 
 <section id="blog" class="section">
   <div class="container">
+	<form class="col-8 form-group has-feedback has-search mb-2" method="post" action="search">
+		<input type="text" name="searchText" class="form-control" placeholder="Search">
+	</form>
+
     <div class="row">
       <!-- section title -->
       <div class="title text-center wow fadeInDown">
@@ -141,7 +144,7 @@ End Fixed Navigation
 							<span"><%= blog.dislikes.length %> Dislikes</span>
 						</span>
 					</div>
-                    <p><%= blog.content ? blog.content : 'description here' %></p>
+                    <p><%= blog.content ? blog.content.substring(0, 200) : 'description here' %></p>
                     <a class="btn btn-transparent" href="/readmore/<%= blog._id %>">Read more</a>
                     </div>
                 </div>
