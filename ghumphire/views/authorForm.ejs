@@ -18,38 +18,52 @@
 	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
+    <!-- <style>
+        body{
+            background-color: #2f383d;
+        }
+    </style> -->
 </head>
 <body>
     <!-- Contact Form -->
-        <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-            <form id="contact-form" method="post" action="requestUpload" role="form">
+        <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" style="margin-top: 20px; margin-left: 390px;">
+            <h3 style="color: rgb(235, 55, 0);">Write your experience!</h3>
+            <form id="contact-form" method="post" action="requestUpload" role="form" >
             
                 <div class="form-group">
-                    <input type="text" placeholder="Author Name" class="form-control" name="authorName" id="authorName" required>
+                    <label style="color: black;">Author Name</label>
+                    <input type="text" style="color: black;" class="form-control" name="authorName" id="authorName" required>
                 </div>
                 
                 <div class="form-group">
-                    <input type="email" placeholder="Author Email" class="form-control" name="email" id="email" required>
+                    <label style="color: black;">Email</label>
+                    <input type="email" style="color: black;" class="form-control" name="email" id="email" required>
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Title" class="form-control" name="title" id="title" required>
+                    <label style="color: black;"><Title></Title></label>
+                    <input type="text" style="color: black;" class="form-control" name="title" id="title" required>
                 </div>
                 
                 <div class="form-group">
-                    <textarea rows="6" placeholder="Content" class="form-control" name="content" id="content" required></textarea>	
+                    <label style="color: black;">description</label>
+                    <textarea rows="6" style="color: black;" class="form-control" name="content" id="content" required></textarea>	
                 </div>
 
                 <div class="form-group">
-                    <input rows="6" placeholder="Location" class="form-control" name="location" id="location" required></input>	
+                    <label style="color: black;">Location</label>
+                    <input rows="6" style="color: black;" class="form-control" name="location" id="location" required></input>	
                 </div>
 
                 <div class="form-group">
-                    <input rows="6" placeholder="Tag" class="form-control" name="tag" id="tag"></input>	
+                    <label style="color: black;">Tag</label>
+
+                    <input rows="6" style="color: black;" class="form-control" name="tag" id="tag"></input>	
                 </div>
 
                 <div class="form-group">
-                    <input rows="6" placeholder="PriceRange" class="form-control" name="priceRange" id="priceRange"></input>	
+                    <label style="color: black;">Price Range</label>
+                    <input rows="6" style="color: black;" class="form-control" name="priceRange" id="priceRange"></input>	
                 </div>
 
                 <div id="mail-success" class="success">
