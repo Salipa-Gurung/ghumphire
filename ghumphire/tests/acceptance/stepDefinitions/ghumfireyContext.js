@@ -22,7 +22,7 @@ Given('a user has navigated to the homePage',async function () {
     await page.click('text=Explore Us')
 });
 
-When('the user clicks view all post button using the webUI',async function () {
+When('the user clicks Explore Us, it navigates to View all post button',async function () {
     // clicks element by class name
     await page.click(viewAllElement)
 });

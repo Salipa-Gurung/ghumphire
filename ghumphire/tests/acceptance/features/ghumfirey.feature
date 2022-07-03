@@ -6,5 +6,5 @@ Feature: View all posts
 
  Scenario: View all blog posts
    Given a user has navigated to the homePage
-   When the user clicks Explore Us, it navigates to view all post button 
+   When the user clicks Explore Us, it navigates to View all post button
    Then all blog posts should be displayed on the webUI
